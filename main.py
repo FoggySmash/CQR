@@ -1,7 +1,5 @@
-import os
-from stuff.generate import *
+from generate import cqr_generate
 
-output_folder = './output'
+text_input = input("Enter text")
 
-generate("test.txt")
-
+cqr_generate(text_input)
