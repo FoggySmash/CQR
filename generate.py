@@ -2,14 +2,14 @@ from PIL import Image, ImageDraw
 import os
 
 #
-def cqr_generate(text_input):
+def cqr_generate(text_input,image_size):
     
     file_path = create_file_path(text_input)
     
     text_binary = str_to_binary(text_input)
     
     if len(text_binary) % 8 == 0: 
-        image_generation(file_path,text_binary)
+        image_generation(file_path,text_binary,image_size)
     else:
         print("Error at text binary: Not divisible by 8")
 
@@ -43,9 +43,9 @@ def char_to_binary(char):
     return char_in_binary
 
 
-def image_generation(file_path,binary_input):
+def image_generation(file_path,binary_input,image_size):
     # The x and y size of the image in pixels
-    image_size = 16
+    image_size = 38
     
     # Creates image
     image = Image.new('RGBA', (image_size, image_size), color='white')
